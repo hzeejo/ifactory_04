@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Modal</title>
+</head>
+<body>
+  <div class="modal">
+    <div class="bg_wrap">
+      <img src="./images/bg_modal.jpg" alt="배경이미지">
+    </div>
+    <button type="button" class="btn_home">홈으로</button>
+    <div class="popup_overlay" id="popupOverlay">
+      <div class="popup">
+        <button type="button" class="close_btn" id="closePopup">닫기</button>
+        <p class="h_02">영상 보기를 그만하고<br/>처음 화면으로 돌아가시겠습니까?</p>
+        
+        <div class="popup_footer">
+          <button type="button" class="btn_bgDark">네</button>
+          <button type="button" class="btn_lineDGray">아니오</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+  const closeBtn = document.getElementById("closePopup");
+  const overlay = document.getElementById("popupOverlay");
+
+  // 페이지 로딩 시 자동 팝업 열기
+  window.addEventListener("load", () => {
+    overlay.style.display = "flex";
+  });
+
+  // 팝업 닫기 (닫기 버튼)
+  closeBtn.addEventListener("click", () => {
+    overlay.style.display = "none";
+  });
+
+  // 팝업 닫기 (배경 클릭)
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.style.display = "none";
+    }
+  });
+</script>
+</html>
+ 
