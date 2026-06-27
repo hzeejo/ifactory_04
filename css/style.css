@@ -9,12 +9,18 @@
 }
 
 /* title */
-[class*="h_01"] {font-size:120px; font-weight:bold; letter-spacing:-0.6px;}
-[class*="h_02"] {font-size:60px; font-weight:bold; letter-spacing:-0.5px; line-height:120%;}
-[class*="body_01"] {font-size:40px; font-weight:bold; letter-spacing:-0.5px;}
-[class*="body_02"] {font-size:30px; font-weight:bold; letter-spacing:-0.3px; line-height:220%;}
-[class*="guide_01"] {font-size:30px; font-weight:bold; letter-spacing:-0.3px;}
-[class*="guide_02"] {font-size:20px; font-weight:bold; letter-spacing:-0.9px;}
+[class*="h_01"] {font-size:40px; font-weight:bold; letter-spacing:-0.5px;}
+[class*="h_02"] {font-size:26px; font-weight:bold; letter-spacing:-0.6px; line-height:150%;}
+[class*="h_03"] {font-size:20px; font-weight:bold; letter-spacing:-0.6px; line-height:150%;}
+[class*="body_01"] {font-size:16px; font-weight:bold; letter-spacing:-0.6px;}
+[class*="body_02"] {font-size:14px; font-weight:bold; letter-spacing:-0.3px; line-height:170%;}
+[class*="guide_01"] {font-size:13px; font-weight:bold; letter-spacing:-0.2px; line-height:150%;}
+[class*="num_01"] {font-size:22px; font-weight:medium; line-height:150%;}
+[class*="num_02"] {font-size:18px; font-weight:medium; line-height:150%;}
+[class*="num_03"] {font-size:14px; font-weight:medium; line-height:150%;}
+[class*="btn_01"] {font-size:20px; font-weight:bold; letter-spacing:-0.4px; line-height:150%;}
+[class*="btn_02"] {font-size:16px; font-weight:bold; letter-spacing:-0.4px;}
+[class*="btn_03"] {font-size:14px; font-weight:bold; letter-spacing:-0.4px;}
 
 /* color */
 [class*="cWhite"] {color:var(--white);}
@@ -25,6 +31,21 @@
 [class*="cSecondary"] {color:#F8341D;}
 [class*="cTertiary1"] {color:#AEDAFF;}
 [class*="cTertiary2"] {color:#E6E2DE;}
+
+[class*="primary_01"] {color:#404040;}
+[class*="primary_02"] {color:#FF522C;}
+[class*="primary_03"] {color:#0D82FF;}
+[class*="primary_04"] {color:#5D22C4;}
+[class*="primary_05"] {color:#4ACB7D;}
+
+[class*="semantic_01"] {color:#E9EAEC;}
+[class*="semantic_02"] {color:#F7F8FA;}
+[class*="semantic_03"] {color:#F2EFEC;}
+[class*="semantic_04"] {color:#ffffff;}
+
+[class*="neutral_100"] {color:#000000;}
+[class*="neutral_60"] {color:#646464;}
+[class*="neutral_30"] {color:#B2B2B2;}
 
 /* button */
 [class^="btn_"] {display:flex; align-items:center; justify-content:center; min-height:104px; padding:30px 40px; border-radius:60px; font-size:30px; font-weight:bold; letter-spacing:-.8px; background:var(--white);}
