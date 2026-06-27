@@ -29,7 +29,7 @@
 [class*="cLGray"] {color:#CFCFCF;}
 [class*="cPrimary"] {color:var(--primary);}
 [class*="cSecondary"] {color:#F8341D;}
-[class*="cTertiary1"] {color:#AEDAFF;}
+[class*="cTertiary1"] {color:#AEDAFF;}  
 [class*="cTertiary2"] {color:#E6E2DE;}
 
 [class*="primary_01"] {color:#404040;}
