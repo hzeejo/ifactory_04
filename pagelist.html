@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page List</title>
+  <style>
+    *, *::before, *::after {box-sizing:border-box; margin:0; padding:0;}
+    body {font-family:'Spoqa Han Sans Neo', 'Archivo', sans-serif; background:#f7f8fa; color:#404040; padding:60px 80px;}
+    .page-header {display:flex; align-items:center; justify-content:space-between; margin-bottom:40px; padding-bottom:16px; border-bottom:2px solid #404040;}
+    h1 {font-size:22px; font-weight:bold;}
+    .legend {display:flex; align-items:center; gap:8px;}
+    .section {margin-bottom:48px;}
+    .section-title {font-size:14px; font-weight:bold; text-transform:uppercase; color:#b2b2b2; letter-spacing:0.5px; margin-bottom:12px;}
+    .page-list {display:flex; flex-direction:column; gap:8px;}
+    .page-item {display:flex; align-items:center; gap:16px; padding:14px 20px; background:#fff; border-radius:10px; text-decoration:none; border:1px solid #e9eaec; transition:border-color 0.15s, box-shadow 0.15s;}
+    .page-item:hover {border-color:#0D82FF; box-shadow:0 2px 12px rgba(13,130,255,0.1);}
+    .page-num {flex-shrink:0; font-size:12px; font-weight:bold; color:#b2b2b2; width:28px;}
+    .page-name {font-size:15px; font-weight:bold; color:#404040; flex:1;}
+    .page-path {font-size:12px; color:#b2b2b2;}
+    .badge {font-size:12px; font-weight:bold; padding:2px 8px; border-radius:20px; background:#f2efec; color:#646464;}
+    .badge.guide {background:#e9eaec; color:#404040;}
+    .status {flex-shrink:0; font-size:12px; font-weight:bold; padding:3px 10px; border-radius:20px;}
+    .status.done {background:#e6f9ef; color:#1ea84e;}
+    .status.wip {background:#fff4e5; color:#e07b00;}
+    .status.todo {background:#f0f0f0; color:#b2b2b2;}
+  </style>
+</head>
+<body>
+  <div class="page-header">
+    <h1>Page List</h1>
+    <div class="legend">
+      <span class="status done">완료</span>
+      <span class="status wip">진행중</span>
+      <span class="status todo">미작업</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Guide</p>
+    <div class="page-list">
+      <a href="guide.html" class="page-item" target="_blank">
+        <span class="page-num">—</span>
+        <span class="page-name">Style Guide</span>
+        <span class="page-path">guide.html</span>
+        <span class="badge guide">guide</span>
+        <span class="status wip">진행중</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <p class="section-title">Module</p>
+    <div class="page-list">
+      <a href="pages/module/01.html" class="page-item" target="_blank">
+        <span class="page-num">01</span>
+        <span class="page-name">목록</span>
+        <span class="page-path">pages/module/01.html</span>
+        <span class="badge">module</span>
+        <span class="status done">완료</span>
+      </a>
+      <a href="pages/module/02.html" class="page-item" target="_blank">
+        <span class="page-num">02</span>
+        <span class="page-name">시작하기</span>
+        <span class="page-path">pages/module/02.html</span>
+        <span class="badge">module</span>
+        <span class="status done">완료</span>
+      </a>
+      <a href="pages/module/03.html" class="page-item" target="_blank">
+        <span class="page-num">03</span>
+        <span class="page-name">환영 인트로</span>
+        <span class="page-path">pages/module/03.html</span>
+        <span class="badge">module</span>
+        <span class="status done">완료</span>
+      </a>
+      <a href="pages/module/04.html" class="page-item" target="_blank">
+        <span class="page-num">04</span>
+        <span class="page-name">퀴즈 인트로</span>
+        <span class="page-path">pages/module/04.html</span>
+        <span class="badge">module</span>
+        <span class="status done">완료</span>
+      </a>
+      <a href="pages/module/05.html" class="page-item" target="_blank">
+        <span class="page-num">05</span>
+        <span class="page-name">퀴즈</span>
+        <span class="page-path">pages/module/05.html</span>
+        <span class="badge">module</span>
+        <span class="status done">완료</span>
+      </a>
+    </div>
+  </div>
+</body>
+</html>

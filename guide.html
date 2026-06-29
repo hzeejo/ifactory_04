@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Font Guide</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      padding: 60px 80px;
+      background: #fff;
+      color: var(--primary-01);
+    }
+    .guide-section { margin-bottom: 64px; }
+    .section-label {
+      font-size: 14px;
+      text-transform: uppercase;
+      color: var(--primary-01);
+      padding-bottom:12px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--primary-01);
+    }
+
+    /* ── 공통 row ── */
+    .guide-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    /* ── 공통 label ── */
+    .row-label {
+      flex-shrink: 0;
+      width: 160px;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--primary-01);
+    }
+
+    .font-sample {font-size: 28px; line-height: 1.4;}
+  </style>
+</head>
+<body>
+
+  <!-- ── 1. Font Types ── -->
+  <section class="guide-section">
+    <p class="section-label">01 · Font Types</p>
+
+    <div class="guide-row">
+      <p class="row-label">Spoqa Han Sans Neo</p>
+      <p class="font-sample spoqa">가나다라마바사아자차카타파하 / The quick brown fox</p>
+    </div>
+    <div class="guide-row">
+      <p class="row-label">Archivo</p>
+      <p class="font-sample archivo">1,234,567,890</p>
+    </div>
+  </section>
+
+  <!-- ── 2. Title Styles (style.css /* title */) ── -->
+  <section class="guide-section">
+    <p class="section-label">02 · Title Styles</p>
+
+    <div class="guide-row">
+      <p class="row-label">.h_01</p>
+      <p class="h_01">1만 원의 실질가치는 시간이 지날수록 하락한다</p>
+    </div>
+    <div class="guide-row">
+      <p class="row-label">.h_02</p>
+      <p class="h_02">인플레이션은 돈의 가치를 어떻게 바꾸나요?</p>
+    </div>
+    <div class="guide-row">
+      <p class="row-label">.h_03</p>
+      <p class="h_03">투자의 불확실성</p>
+    </div>
+    <div class="guide-row">
+      <p class="row-label">.body_01</p>
+      <p class="body_01">우리 생활의 전반적인 가격 수준을 물가라고 해요.</p>
+    </div>
+    <div class="guide-row">
+      <p class="row-label">.body_02</p>
+      <p class="body_02">우리 생활의 전반적인 가격 수준을 물가라고 해요.</p>
+    </div>
+    <div class="guide-row">
+      <p class="row-label">.guide_01</p>
+      <p class="guide_01">우리 생활의 전반적인 가격 수준을 물가라고 해요.</p>
+    </div>
+    <div class="guide-row">
+      <p class="row-label">.num_01</p>
+      <p class="num_01">8.000</p>
+    </div>
+    <div class="guide-row">
+      <p class="row-label">.num_02</p>
+      <p class="num_02">8.000</p>
+    </div>
+    <div class="guide-row">
+      <p class="row-label">.num_03</p>
+      <p class="num_03">8.000</p>
+    </div>
+  </section>
+
+  <!-- ── 3. Button Styles (style.css /* button */) ── -->
+  <section class="guide-section">
+    <p class="section-label">03 · Button Styles</p>
+
+    <div class="guide-row">
+      <button type="button" class="btn_linePrimary"><i class="icon_arrow_right"></i>시작하기</button>
+      <button type="button" class="btn_bgPrimary"><i class="icon_arrow_right"></i>시작하기</button>
+      <button type="button" class="btn_bgDark"><i class="icon_arrow_right"></i>시작하기</button>
+    </div>
+    <div class="guide-row">
+      <button type="button" class="btn_lineDark_sm">다음</button>
+      <button type="button" class="btn_linePrimary_sm">다음</button>
+      <button type="button" class="btn_linePrimary2_sm">다음</button>
+      <button type="button" class="btn_bgPrimary2_sm">다음</button>
+      <button type="button" class="btn_bgPrimary3_sm">다음</button>
+      <button type="button" class="btn_bgPrimary1_sm">다음</button>
+      <button type="button" class="btn_bgDark_sm">다음</button>
+      <button type="button" class="btn_lineNeutral_sm">다음</button>
+    </div>
+    <div class="guide-row">
+      <label class="checkbox_item">
+        <input type="checkbox" class="checkbox_input">
+        <span class="body_01">현재 편향</span>
+      </label>
+      <label class="checkbox_item">
+        <input type="checkbox" class="checkbox_input" checked>
+        <span class="body_01">현재 편향</span>
+      </label>
+      <label class="checkbox_item">
+        <input type="checkbox" class="checkbox_input checkbox_blue">
+        <span class="body_01">현재 편향</span>
+      </label>
+      <label class="checkbox_item">
+        <input type="checkbox" class="checkbox_input checkbox_red" checked>
+        <span class="body_01">현재 편향</span>
+      </label>
+      <label class="checkbox_item is_wrong">
+        <input type="checkbox" class="checkbox_input" checked>
+        <span class="body_01">현재 편향</span>
+      </label>
+    </div>
+  </section>
+</body>
+</html>

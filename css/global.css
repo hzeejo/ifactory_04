@@ -1,0 +1,18 @@
+/* Spoqa Han Sans Neo */
+@import url("https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/css/SpoqaHanSansNeo.css");
+
+/* Archivo */
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* 모든 페이지에 공통 적용 */
+body {
+  font-family: 'Spoqa Han Sans Neo', 'Archivo', sans-serif;
+}
+
+.archivo {
+    font-family: 'Archivo', sans-serif;
+}
+
+.spoqa {
+  font-family: 'Spoqa Han Sans Neo', sans-serif;
+}
