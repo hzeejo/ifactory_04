@@ -24,9 +24,9 @@ h4, [class*="h_04"] {font-size:16px; font-weight:bold; letter-spacing:-4%; line-
 [class*="body_01"] {font-size:16px; font-weight:bold; letter-spacing:-6%; line-height:24px;}
 [class*="body_02"] {font-size:14px; font-weight:bold; letter-spacing:-0.3px; line-height:170%;}
 [class*="guide_01"] {font-size:13px; font-weight:bold; letter-spacing:-0.2px; line-height:150%;}
-[class*="num_01"] {font-size:22px; font-weight:medium; line-height:150%; font-family:'Archivo', sans-serif;}
-[class*="num_02"] {font-size:18px; font-weight:medium; line-height:150%; font-family:'Archivo', sans-serif;}
-[class*="num_03"] {font-size:14px; font-weight:medium; line-height:150%; font-family:'Archivo', sans-serif;}
+[class*="num_01"] {font-size:22px; font-weight:500; line-height:150%; font-family:'Archivo', sans-serif;}
+[class*="num_02"] {font-size:18px; font-weight:500; line-height:150%; font-family:'Archivo', sans-serif;}
+[class*="num_03"] {font-size:14px; font-weight:500; line-height:150%; font-family:'Archivo', sans-serif;}
 [class*="btn_01"] {font-size:20px; font-weight:bold; letter-spacing:-0.4px; line-height:150%;}
 [class*="btn_02"] {font-size:16px; font-weight:bold; letter-spacing:-0.4px;}
 [class*="btn_03"] {font-size:14px; font-weight:bold; letter-spacing:-0.4px;}
@@ -79,10 +79,14 @@ h4, [class*="h_04"] {font-size:16px; font-weight:bold; letter-spacing:-4%; line-
 .icon_a {background-image:url(../images/icon/icon_a.svg);}
 .icon_b {background-image:url(../images/icon/icon_b.svg);}
 .icon_q {height:46px; background-image:url(../images/icon/icon_q.svg);}
+.icon_search_line {width:65px; background-image:url(../images/icon/icon_search_line.svg);}
+.icon_calendar {width:24px; height:24px; background-image:url(../images/icon/icon_calendar.svg);}
+.icon_cart {background-image:url(../images/icon/icon_cart.svg);}
+.icon_smile {width:46px; height:46px; background-image:url(../images/icon/icon_smile.svg);}
 
 /* checkbox */
 .checkbox_item {display:flex; align-items:center; gap:5px; cursor:pointer; }
-.checkbox_input {appearance:none; -webkit-appearance:none; width:24px; height:24px; flex-shrink:0; background:url(../images/button/checkbox_off.svg) no-repeat center / 100% auto; cursor:pointer;}
+.checkbox_input {appearance:none; -webkit-appearance:none; width:24px; height:24px; flex-shrink:0; background:url(../images/button/checkbox_off.svg) no-repeat center / 100% auto; cursor:pointer; margin:0;}
 .checkbox_input:checked {background-image:url(../images/button/checkbox_on.svg);}
 .checkbox_blue {background-image:url(../images/button/checkbox_blue.svg);}
 .checkbox_red:checked {background-image:url(../images/button/checkbox_red.svg); }
@@ -111,12 +115,11 @@ header {display:flex; align-items:center; justify-content:space-between; padding
     .light .page_type p + p:before {background:var(--semantic-01);}
 footer {max-width:1200px; width:100%; margin:0 auto; padding:20px 0 40px; text-align:center; border-top:1px solid var(--semantic-01);}
 
-/* content */
-main {flex:1; max-width:1200px; width:100%; margin:0 auto; padding:40px 0 0; position:relative; z-index:1; display:flex; flex-direction:column;}
+/* module */
+main {flex:1; position:relative; max-width:1200px; width:100%; margin:0 auto; padding:40px 0 0; position:relative; z-index:1; display:flex; flex-direction:column;}
 [class^="bg_"] main {padding-top:60px;}
 .bg_semantic.ty2 main {padding-top:84px;}
   .bg_layer {position:absolute; top:0; left:0; width:100%; height:100%; z-index:-1;}
-  /* .bg_desk {display:block; width:100%; height:auto; margin-top:-265px; position:relative; z-index:2;} */
   .title {padding-bottom:20px; text-align:center;}
     .title h1 {justify-content:center;}
   .main_banner h3 {padding:0 5px 10px;}
@@ -125,30 +128,92 @@ main {flex:1; max-width:1200px; width:100%; margin:0 auto; padding:40px 0 0; pos
       .banner_info .guide_01 {color:var(--primary-03); text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px;}
       .banner_info [class^="btn_"] {align-self:flex-start; min-width:auto; cursor:default;}
   
+  /* 메인 - 인트로 */
   .main_start {display:flex; flex-direction:column; align-items:center; gap:60px;}
     .ep_title {display:flex; align-items:center; gap:12px; width:100%;}
       .ep_title .ep_line {flex:1; min-width:0;}
       .main_start .title {display:flex; flex-direction:column; gap:20px; padding:0;}
       .main_start .btn_bgDark {box-shadow:0 0 30px 0 rgba(90,156,233,0.3);}
 
-  .main_ant {display:flex; align-items:flex-start; gap:50px; flex:1;}
-  .txt_wrap {display:flex; flex-direction:column; gap:20px; width:563px; position:relative; padding-top:20px; z-index:2;}
-  .bg_semantic.ty2 .txt_wrap {padding-top:76px;}
-    .txt_wrap h1 {line-height:1.25;}
-    .txt_wrap .money_chart {width:420px; height:240px; margin-top:-40px; align-self:flex-end;}
-    .bg_semantic.ty2 .txt_wrap img {margin-top:36px;}
+  /* 메인 - 개미튜터 */
+  .main_ant {display:flex; align-items:flex-start; gap:50px; flex:1;}  
+    .txt_wrap {display:flex; flex-direction:column; gap:20px; /* width:563px; */ position:relative; padding-top:20px; z-index:2;}
+    .bg_semantic.ty2 .txt_wrap {padding-top:76px;}
+      .txt_wrap h1 {line-height:1.25;}
+      .txt_wrap .money_chart {width:420px; height:240px; margin-top:-40px; align-self:flex-end;}
+      .bg_semantic.ty2 .txt_wrap img {margin-top:36px;}
 
-  .desk_wrap {position:absolute; bottom:0; left:0; right:0; z-index:2; height:242px;}
-    .desk_wrap .inner {display:flex; justify-content:flex-end; max-width:1200px; margin:0 auto; padding-top:12px;}
-    .desk_wrap .btn_linePrimary2_sm {position:relative; z-index:2;}
-    .bg_desk {position:absolute; bottom:0; left:0; width:100%; height:auto; object-fit:cover; object-position:bottom;}
+    .desk_wrap {position:absolute; bottom:0; left:0; right:0; z-index:2; height:242px;}
+      .desk_wrap .inner {display:flex; justify-content:flex-end; max-width:1200px; margin:0 auto; padding-top:12px;}
+      .desk_wrap .btn_linePrimary2_sm {position:relative; z-index:2;}
+      .bg_desk {position:absolute; bottom:0; left:0; width:100%; height:auto; object-fit:cover; object-position:bottom;}
 
-  /* 메인 퀴즈 */
+  /* 메인 - 퀴즈 */
   .q_title {display:flex; justify-content:center; gap:60px; padding:30px; border-radius:60px; background:var(--semantic-04); border:1px solid var(--semantic-03); text-align:center; box-shadow:0 0 10px 0 rgba(255,101,67,0.35);}
     .q_title .icon_q {position:relative; flex-shrink:0;}
     .q_title .icon_q:before {position:absolute; top:50%; right:-30px; width:1px; height:calc(100% - 16px); transform:translateY(-50%); background:var(--primary-02); content:'';}
   .q_answer {position:relative; padding-top:77px; text-align:center;}
     .group_btn {position:absolute; bottom:2px; left:50%; width:100%; transform:translateX(-50%); display:flex; align-items:center; justify-content:center; gap:220px;}
+
+/* study */
+.main_ant.study {gap:83px;}
+  .study .txt_wrap {padding-top:114px;}
+
+main.bg_full {max-width:100%; padding-top:60px;}
+main.bg_full.ty2 {padding-top:0;}
+  .step_image {position:absolute; top:-60px; right:40px; width:170px; height:300px;}
+  .bg_inner {width:860px; margin:0 auto;}
+    .search_wrap {position:relative;}
+      .search_wrap .icon_search_line {position:absolute; top:0; left:-90px;}
+
+    /* 학습 - 비용 비교 */
+    .ticket_lists {display:flex; gap:60px; padding-top:60px;}
+      .ticket_lists li {position:relative; display:flex; align-items:center; justify-content:center; width:400px; height:350px; border-radius:30px;}
+      .ticket_lists li:nth-child(1) {background:linear-gradient(#F3F3F3 0%, #DADADA 100%);}
+      .ticket_lists li:nth-child(2) {background:#F3F3F3;}
+        .ticket_lists .clip {display:flex; flex-direction:column; gap:10px; align-items:center; justify-content:center; position:absolute; top:0; left:30px; width:60px; height:80px; background:var(--neutral-60); border-radius:0 0 12px 12px; color:#fff; font-size:16px; font-weight:bold; text-align:center; letter-spacing:-4%;}
+        .ticket_lists [class^="btn_"] {position:absolute; bottom:-20px; left:50%; transform:translateX(-50%); width:300px;}
+
+    /* 학습 - 장바구니 */
+    [class^="box_"] {display:flex; align-items:center; justify-content:center; width:100%; height:80px; padding:10px; background:var(--neutral-60);}
+    .box_green {background:var(--primary-05);}
+    .box_red {background:var(--primary-02);}
+    .split_layer {display:flex; flex:1;}
+      .split_layer > [class^="split"] {flex:1; padding:60px;}
+      .split_layer.ty2 > [class^="split"] {padding-top:133px;}
+      .split_light {display:flex; flex-direction:column; align-items:center;}
+        .sl_wrap {width:520px;}
+          .sl_wrap [class^="btn_line"] {align-self:flex-start; margin-top:72px; width:fit-content;}
+          .sl_wrap .btn_bgDark {margin:0 auto; margin-top:60px;}
+          .option_lists {display:flex; gap:20px; padding-top:20px;}
+            .option_item {cursor:pointer;}
+              .option_item .img_wrap {display:flex; align-items:center; justify-content:center; width:160px; height:160px; background-color:var(--semantic-02); margin-bottom:10px;}
+              .option_item .checkbox_item {justify-content:center;}
+      .split_gray {background: linear-gradient(to right, #E6E2DE 0%, rgba(230,226,222,0) 50%);}
+        .diray_wrap {width:500px; margin:0 auto;}
+          .diary_title {display:flex; justify-content:space-between; padding-bottom:20px; border-bottom:2px solid var(--neutral-60);}
+          .diary_record {position:relative; border-bottom:1px solid var(--primary-01); margin-bottom:6px;}
+            .diary_record::after {content:''; position:absolute; left:0; right:0; bottom:-5px; height:1px; background:var(--primary-01);}
+            .pocket {display:flex; justify-content:space-between; padding:20px 10px;}
+            .diary_record ul {padding:20px 10px; border-top:1px dashed var(--neutral-60); border-bottom:1px dashed var(--neutral-60);}
+            .diary_record:has(> .pocket.is-hidden) ul {border-bottom:none;}
+              .diary_record ul li {width:400px;}
+              .diary_record ul li + li {padding-top:20px;}
+                .diary_record ul .pocket {padding:0;}
+          .diray_wrap [class^="btn_line"] {margin-top:100px; width:fit-content; margin-left:auto;}
+          .ty2 .diray_wrap [class^="btn_line"] {margin-top:54px;}
+      
+    /* 학습 - 가격비교 */
+    .split_light .diray_wrap [class^="btn_line"] {margin-left:0;}
+    .tutor_notice {position:absolute; top:0; left:50%; transform:translateX(-50%); display:flex; align-items:flex-end;}
+      .tutor_notice img {width:172px; height:173px; flex-shrink:0;}
+      .tutor_notice p {padding-bottom:8px;}
+
+.is-hidden {display:none !important;}
+.is-paid {opacity:0.4; pointer-events:none;}
+[class^="btn_"]:disabled {opacity:0.4; cursor:not-allowed;}
+.no-border {border-bottom:none !important;}
+.no-border::after {display:none !important;}
 
 @media screen and (max-width:1199px) {
   header {max-width:100%; padding:36px 40px 16px;}

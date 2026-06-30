@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 09</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <img src="../../images/icon/logo_ci.svg" alt="전국투가교육협의회" />
+    <div class="page_type">
+      <p class="guide_01 on">금융투자 실험실</p>
+      <p class="guide_01">심화 활동</p>
+    </div>
+  </header>
+  <main class="bg_full ty2"> <!-- 전체 너비 사용하는 경우 .bg_full padding-top 없는 경우 ty2 추가 -->
+    <img class="step_image" src="../../images/icon/icon_six.svg">
+    <div class="box_green">
+      <h3 class="semantic_04">장바구니 / 현재 </h3>
+    </div>
+    <section class="split_layer">
+      <div class="split_light">
+        <div class="sl_wrap">
+          <p class="body_01">※ 상품을 클릭 후 결제하기를 클릭하면 결제가 됩니다.</p>
+          <ul class="option_lists">
+            <li>
+              <label class="option_item">
+                <div class="img_wrap">
+                  <img src="../../images/sample/img_ticket_02.svg" alt="티켓이미지">
+                </div>
+                <div class="checkbox_item">
+                  <input type="checkbox" class="checkbox_input">
+                  <span class="body_02">장바구니 담기</span>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="option_item">
+                <div class="img_wrap">
+                  <img src="../../images/sample/img_ticket_02.svg" alt="티켓이미지">
+                </div>
+                <div class="checkbox_item">
+                  <input type="checkbox" class="checkbox_input">
+                  <span class="body_02">장바구니 담기</span>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label class="option_item">
+                <div class="img_wrap">
+                  <img src="../../images/sample/img_chicken.svg" alt="티켓이미지">
+                </div>
+                <div class="checkbox_item">
+                  <input type="checkbox" class="checkbox_input">
+                  <span class="body_02">장바구니 담기</span>
+                </div>
+              </label>
+            </li>
+          </ul>
+          <button type="button" class="btn_bgDark" disabled><i class="icon_cart"></i>결제하기</button>
+          <button type="button" class="btn_lineNeutral_sm">이전</button>
+        </div>
+      </div>
+      <div class="split_gray">
+        <div class="diray_wrap">
+          <div class="diary_title">
+            <h2>용돈기입장</h2>
+            <i class="icon_smile"></i>
+          </div>
+          <div class="diary_record">
+            <div class="pocket">
+              <p class="body_01">용돈 받음</p>
+              <span class="num_03">30,000</span>
+            </div>
+            <ul>
+              <li>
+                <div class="pocket">
+                  <p class="body_01">영화 예매</p>
+                  <span class="num_03 primary_02">-8,160</span>
+                </div>
+              </li>
+              <li>
+                <div class="pocket">
+                  <p class="body_01">영화 예매</p>
+                  <span class="num_03 primary_02">-8,160</span>
+                </div>
+              </li>
+              <li>
+                <div class="pocket">
+                  <p class="body_01">치킨</p>
+                  <span class="num_03 primary_02">-12,240</span>
+                </div>
+              </li>
+            </ul>
+            <div class="pocket">
+              <p class="body_01">남은 돈</p>
+              <span class="num_03">1,440</span>
+            </div>
+          </div>
+          <button type="button" class="btn_linePrimary2_sm">다음</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      const products = [
+        { name: '영화 예매', price: 8160 },
+        { name: '영화 예매', price: 8160 },
+        { name: '치킨',     price: 12240 }
+      ];
+
+      const $payBtn       = $('.split_light .btn_bgDark');
+      const $diaryLis     = $('.diary_record ul li');
+      const $diaryUl      = $('.diary_record ul');
+      const $yodongPocket = $('.diary_record > .pocket:first-child');
+      const $remainPocket = $('.diary_record > .pocket:last-child');
+      const $nextBtn      = $('.diray_wrap [class^="btn_line"]');
+
+      let totalMoney = 30000, paidCount = 0, diaryIndex = 0;
+
+      // 초기 상태
+      $diaryLis.add($diaryUl).add($remainPocket).add($nextBtn).addClass('is-hidden');
+      $yodongPocket.find('.body_01, .num_03').text('');
+
+      function typewrite($el, text, speed = 80) {
+        return new Promise(resolve => {
+          $el.text('');
+          let i = 0;
+          const t = setInterval(() => {
+            $el.text($el.text() + text[i++]);
+            if (i >= text.length) { clearInterval(t); resolve(); }
+          }, speed);
+        });
+      }
+
+      // 1. 페이지 진입 → 용돈 받음 → 결제하기 활성화
+      async function startIntro() {
+        await typewrite($yodongPocket.find('.body_01'), '용돈 받음');
+        await typewrite($yodongPocket.find('.num_03'), '30,000');
+        $payBtn.prop('disabled', false);
+      }
+
+      // 2. 결제하기 클릭
+      $payBtn.on('click', async function () {
+        const toProcess = [];
+        $('.option_item').each(function (i) {
+          if ($(this).find('.checkbox_input').prop('checked') && !$(this).data('paid'))
+            toProcess.push({ $item: $(this), i });
+        });
+        if (!toProcess.length) return;
+
+        $payBtn.prop('disabled', true);
+
+        for (const { $item, i } of toProcess) {
+          const $li = $diaryLis.eq(diaryIndex);
+          if (diaryIndex === 0) $diaryUl.removeClass('is-hidden');
+          $li.find('.body_01, .num_03').text('');
+          $li.removeClass('is-hidden');
+          await typewrite($li.find('.body_01'), products[i].name);
+          await typewrite($li.find('.num_03'), `-${products[i].price.toLocaleString()}`);
+          totalMoney -= products[i].price;
+          paidCount++;
+          diaryIndex++;
+          $item.data('paid', true).find('.checkbox_input').prop('checked', false);
+          $item.addClass('is-paid');
+        }
+
+        // 3. 전체 결제 완료 → 남은 돈
+        if (paidCount >= 3) {
+          $remainPocket.find('.body_01, .num_03').text('');
+          $remainPocket.removeClass('is-hidden');
+          await typewrite($remainPocket.find('.body_01'), '남은 돈');
+          await typewrite($remainPocket.find('.num_03'), totalMoney.toLocaleString());
+          // 4. 다음 버튼
+          $nextBtn.removeClass('is-hidden');
+        } else {
+          $payBtn.prop('disabled', false);
+        }
+      });
+
+      startIntro();
+    });
+  </script>
+</body>
+</html>
