@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 14</title>
+  <title>Module 14-1</title>
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -19,7 +19,7 @@
     </div>
   </header>
   <main>
-    <section class="main_q">
+    <section class="main_q is_blur">
       <div class="q_box ty2"> <!-- 좌우정렬인경우 ty2 추가 -->
         <div class="q_head">
           <i class="icon_q"></i>
@@ -45,8 +45,8 @@
         </div>
         <div class="check_list">
           <label class="checkbox_item">
-            <input type="checkbox" class="checkbox_input">
-            <span class="body_01">현재 편향</span>
+            <input type="checkbox" class="checkbox_input" checked>
+            <span class="body_01">현재 편향(click!)</span>
           </label>
           <label class="checkbox_item">
             <input type="checkbox" class="checkbox_input">
@@ -67,7 +67,24 @@
         </div>
       </div>
       <button type="button" class="btn_linePrimary2_sm">다음</button>
+      <!-- 정답인 경우 -->
+      <div class="quiz_pop">
+        <i class="icon_quiz_correct"></i>
+        <h3 class="primary_02">정답입니다!</h3>
+      </div>
     </section>
   </main>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      var $correct = $('.check_list .checkbox_item').eq(0).find('.checkbox_input');
+
+      $correct.on('change', function () {
+        var isChecked = $(this).is(':checked');
+        $('.quiz_pop').toggleClass('is-hidden', !isChecked);
+        $('.main_q').toggleClass('is_blur', isChecked);
+      });
+    });
+  </script>
 </body>
 </html>
