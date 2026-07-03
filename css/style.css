@@ -72,7 +72,7 @@ h4, [class*="h_04"] {font-size:16px; font-weight:bold; letter-spacing:-4%; line-
   [class^="btnGroup_"] button {min-width:240px;}
 
 /* icon */
-[class^="icon_"] {display:flex; align-items:center; justify-content:center; width:40px; height:40px; background-repeat:no-repeat; background-position:center; background-size:100% auto;}
+[class^="icon_"] {display:flex; align-items:center; justify-content:center; width:40px; height:40px; background-repeat:no-repeat; background-position:center; background-size:100% auto; flex-shrink:0;}
 .icon_arrow_right {background-image:url(../images/icon/arrow_right_blue.svg);}
 [class*="btn_bg"] .icon_arrow_right {background-image:url(../images/icon/arrow_right_light.svg);}
 .icon_lab {width:32px; height:32px; background-image:url(../images/icon/icon_lab.svg);}
@@ -80,9 +80,23 @@ h4, [class*="h_04"] {font-size:16px; font-weight:bold; letter-spacing:-4%; line-
 .icon_b {background-image:url(../images/icon/icon_b.svg);}
 .icon_q {height:46px; background-image:url(../images/icon/icon_q.svg);}
 .icon_search_line {width:65px; background-image:url(../images/icon/icon_search_line.svg);}
+.icon_search {background-image:url(../images/icon/icon_search.svg);}
 .icon_calendar {width:24px; height:24px; background-image:url(../images/icon/icon_calendar.svg);}
 .icon_cart {background-image:url(../images/icon/icon_cart.svg);}
 .icon_smile {width:46px; height:46px; background-image:url(../images/icon/icon_smile.svg);}
+.icon_export1 {background-image:url(../images/icon/icon_export1.svg);}
+.icon_export2 {background-image:url(../images/icon/icon_export2.svg);}
+.icon_export3 {background-image:url(../images/icon/icon_export3.svg);}
+.icon_export4 {background-image:url(../images/icon/icon_export4.svg);}
+.icon_export5 {background-image:url(../images/icon/icon_export5.svg);}
+.icon_export6 {background-image:url(../images/icon/icon_export6.svg);}
+[class^="icon_step"] {width:24px; height:24px;}
+.icon_step_1 {background-image:url(../images/icon/icon_step1.svg);}
+.icon_step_2 {background-image:url(../images/icon/icon_step2.svg);}
+.icon_step_3 {background-image:url(../images/icon/icon_step3.svg);}
+.icon_step_1.on {background-image:url(../images/icon/icon_step1_on.svg);}
+.icon_step_2.on {background-image:url(../images/icon/icon_step2_on.svg);}
+.icon_step_3.on {background-image:url(../images/icon/icon_step3_on.svg);}
 
 /* checkbox */
 .checkbox_item {display:flex; align-items:center; gap:5px; cursor:pointer; }
@@ -140,6 +154,7 @@ main {flex:1; position:relative; max-width:1200px; width:100%; margin:0 auto; pa
     .txt_wrap {display:flex; flex-direction:column; gap:20px; /* width:563px; */ position:relative; padding-top:20px; z-index:2;}
     .bg_semantic.ty2 .txt_wrap {padding-top:76px;}
       .txt_wrap h1 {line-height:1.25;}
+      .study .txt_wrap h1 {line-height:normal;}
       .txt_wrap .money_chart {width:420px; height:240px; margin-top:-40px; align-self:flex-end;}
       .bg_semantic.ty2 .txt_wrap img {margin-top:36px;}
 
@@ -149,15 +164,20 @@ main {flex:1; position:relative; max-width:1200px; width:100%; margin:0 auto; pa
       .bg_desk {position:absolute; bottom:0; left:0; width:100%; height:auto; object-fit:cover; object-position:bottom;}
 
   /* 메인 - 퀴즈 */
-  .q_title {display:flex; justify-content:center; gap:60px; padding:30px; border-radius:60px; background:var(--semantic-04); border:1px solid var(--semantic-03); text-align:center; box-shadow:0 0 10px 0 rgba(255,101,67,0.35);}
-    .q_title .icon_q {position:relative; flex-shrink:0;}
-    .q_title .icon_q:before {position:absolute; top:50%; right:-30px; width:1px; height:calc(100% - 16px); transform:translateY(-50%); background:var(--primary-02); content:'';}
+  .q_box {display:flex; align-items:center; justify-content:center; width:100%; padding:30px; border-radius:60px; background:var(--semantic-04); border:1px solid var(--semantic-03); text-align:center; box-shadow:0 0 10px 0 rgba(255,101,67,0.35);}
+  .q_box.ty2 {justify-content:space-between;}
+    .q_box .q_head {display:flex; align-items:center; justify-content:center; gap:60px;}
+      .q_box .q_head .icon_q {position:relative; flex-shrink:0;}
+      .q_box .q_head .icon_q:before {position:absolute; top:50%; right:-30px; width:1px; height:calc(100% - 16px); transform:translateY(-50%); background:var(--primary-02); content:'';}
   .q_answer {position:relative; padding-top:77px; text-align:center;}
     .group_btn {position:absolute; bottom:2px; left:50%; width:100%; transform:translateX(-50%); display:flex; align-items:center; justify-content:center; gap:220px;}
 
 /* study */
 .main_ant.study {gap:83px;}
   .study .txt_wrap {padding-top:114px;}
+.main_ant.studyComplete {gap:48px; position:relative; flex:none;}
+  .studyComplete .txt_wrap {padding-top:120px;}
+  .studyComplete .btn_linePrimary2_sm {position:absolute; right:0; bottom:0;}
 
 main.bg_full {max-width:100%; padding-top:60px;}
 main.bg_full.ty2 {padding-top:0;}
@@ -178,7 +198,9 @@ main.bg_full.ty2 {padding-top:0;}
     [class^="box_"] {display:flex; align-items:center; justify-content:center; width:100%; height:80px; padding:10px; background:var(--neutral-60);}
     .box_green {background:var(--primary-05);}
     .box_red {background:var(--primary-02);}
+    .box_blue {background:var(--primary-03);}
     .split_layer {display:flex; flex:1;}
+    .split_layer.ty3 {display:block; margin:0 auto;}
       .split_layer > [class^="split"] {flex:1; padding:60px;}
       .split_layer.ty2 > [class^="split"] {padding-top:133px;}
       .split_light {display:flex; flex-direction:column; align-items:center;}
@@ -205,9 +227,35 @@ main.bg_full.ty2 {padding-top:0;}
       
     /* 학습 - 가격비교 */
     .split_light .diray_wrap [class^="btn_line"] {margin-left:0;}
-    .tutor_notice {position:absolute; top:0; left:50%; transform:translateX(-50%); display:flex; align-items:flex-end;}
+    .tutor_notice {position:absolute; top:0; left:50%; width:max-content; transform:translateX(-50%); display:flex; align-items:flex-end;}
       .tutor_notice img {width:172px; height:173px; flex-shrink:0;}
       .tutor_notice p {padding-bottom:8px;}
+      .tutor_notice.ty2 img {width:230px; height:212px; flex-shrink:0;}
+      .tutor_notice.ty2 p {padding-bottom:19px;}
+
+    /* 학습 - 뒤집기 카드 */
+    .flip_wrap {position:relative; display:flex; align-self:flex-start; gap:40px; padding-top:152px; margin:0 auto;}
+      .flip_card {width:460px; height:409px; background:#fff; padding:10px; border:1px solid var(--semantic-03); box-shadow:0 4px 6px -2px rgba(0,0,0,.03), 0 12px 16px -4px rgba(0,0,0,.08); perspective:1600px; transition:border-color .3s ease;}
+      .flip_card.open {border-color:var(--primary-04);}
+        .card_inner {position:relative; width:100%; height:100%; transition:transform .7s cubic-bezier(.45,.1,.15,1); transform-style:preserve-3d;}
+        .flip_card.open .card_inner {transform:rotateY(180deg);}
+          .card_face {position:absolute; inset:0; display:flex; flex-direction:column; gap:40px; align-items:center; justify-content:center; width:100%; height:100%; padding:0 20px; background:var(--semantic-02); backface-visibility:hidden; -webkit-backface-visibility:hidden;}
+          .card_face.card_back {transform:rotateY(180deg);}
+            .card_face h3 {display:flex; align-items:center; justify-content:center;}
+            .card_face li {display:flex; align-items:center; gap:20px; padding:20px 0; opacity:0; transform:translateY(8px); transition:opacity .35s ease, transform .35s ease;}
+            .flip_card.open .card_face li {opacity:1; transform:translateY(0); transition-delay:.45s;}
+            .flip_card.open .card_face li:nth-child(2) {transition-delay:.55s;}
+            .flip_card.open .card_face li:nth-child(3) {transition-delay:.65s;}
+            .card_face li:first-child {padding-top:0;}
+            .card_face li:last-child {padding-bottom:0;}
+            .card_face li + li {border-top:1px dashed var(--primary-03);}
+              .card_face li .body_01 {font-weight:400;}
+      .flip_wrap .btn_linePrimary2_sm {position:absolute; left:calc(100% + 50px); bottom:11px; white-space:nowrap;}
+
+    .btm_btn {display:flex; justify-content:center; padding-top:40px;}
+
+/* 퀴즈 */
+.quiz_step {display:flex; align-items:center; gap:12px;}
 
 .is-hidden {display:none !important;}
 .is-paid {opacity:0.4; pointer-events:none;}
