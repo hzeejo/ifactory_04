@@ -303,13 +303,14 @@ main.bg_full.ty2 {padding-top:0;}
   .pagination p {display:flex; align-items:center; justify-content:center; gap:10px;}
 
 /* 메모배경 보드 */
-.tit_strong {position:relative;}
-  .tit_strong:after {content:''; position:absolute; bottom:-37px; left:0; width:490px; height:24px; background:url(../images/icon/icon_underline.svg) center no-repeat; background-size:100% auto;}
-  .tit_strong h2 {display:flex; gap:5px;}
+.tit_strong {position:relative; min-height:77px;}
+  .tit_strong h2 {position:relative; display:flex; gap:5px;}
+  .tit_strong h2:after {content:''; position:absolute; bottom:-37px; left:0; width:490px; height:24px; background:url(../images/icon/icon_underline.svg) center no-repeat; background-size:100% auto;}
     .tit_strong h2 .icon_star {margin-top:-2px;}
 
-.main_board.ty3 ul {display:flex; flex-direction:column; gap:20px; padding-top:40px;}
+.main_board.ty3 ul {display:flex; flex-direction:column; gap:20px;}
   .main_board.ty3 ul li h3 {padding-bottom:10px;}
+  .main_board.ty3 ul li h3.ty2 {padding-bottom:20px;}
   .main_board.ty3 ul li p + p {padding-top:20px;}
 .main_board.ty3 .pagination {padding-top:6px;}
 
