@@ -263,6 +263,15 @@ main.bg_full.ty2 {padding-top:0;}
       .flip_wrap .btn_linePrimary2_sm {position:absolute; left:calc(100% + 50px); bottom:11px; white-space:nowrap;}
 
     .btm_btn {display:flex; justify-content:center; padding-top:40px;}
+    .btm_btn:not(.is_hidden) {animation:btm_btn_fade_in .6s ease both;}
+
+@keyframes btm_btn_fade_in {
+  from {opacity:0; transform:translateY(12px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+    /* 퀴즈 - 뒤집기 카드 */
+    .main_q .flip_wrap {justify-content:center; padding-top:60px;}
 
 /* 퀴즈 */
 .main_q {position:relative;}

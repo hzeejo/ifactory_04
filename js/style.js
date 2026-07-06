@@ -188,16 +188,21 @@ $(function () {
       $('.btm_btn').removeClass('is_hidden');
     }
 
+    // 카드 플립(.7s)과 뒷면 리스트 순차 등장(마지막 delay .65s + .35s)이 모두 끝난 뒤 노출
+    function showCompleteAfterFlip() {
+      setTimeout(showComplete, 1000);
+    }
+
     $flipCards.find('.card_front .btn_linePrimary').on('click', function () {
       $(this).closest('.flip_card').addClass('open');
       if ($flipCards.length === $flipCards.filter('.open').length) {
-        showComplete();
+        showCompleteAfterFlip();
       }
     });
 
     $('.flip_wrap > .btn_linePrimary2_sm').on('click', function () {
       $flipCards.addClass('open');
-      showComplete();
+      showCompleteAfterFlip();
     });
   })();
 
