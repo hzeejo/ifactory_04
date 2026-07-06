@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Module 11</title>
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/global.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
   <header>
@@ -87,25 +87,6 @@
     </section>
   </main>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script>
-    $(function () {
-      function showComplete() {
-        $('.flip_wrap > .btn_linePrimary2_sm').addClass('is-hidden');
-        $('.btm_btn').removeClass('is-hidden');
-      }
-
-      $('.flip_card .card_front .btn_linePrimary').on('click', function () {
-        $(this).closest('.flip_card').addClass('open');
-        if ($('.flip_card').length === $('.flip_card.open').length) {
-          showComplete();
-        }
-      });
-
-      $('.flip_wrap > .btn_linePrimary2_sm').on('click', function () {
-        $('.flip_card').addClass('open');
-        showComplete();
-      });
-    });
-  </script>
+  <script src="../../js/style.js"></script>
 </body>
 </html>

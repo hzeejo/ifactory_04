@@ -314,6 +314,33 @@ main.bg_full.ty2 {padding-top:0;}
   .main_board.ty3 ul li p + p {padding-top:20px;}
 .main_board.ty3 .pagination {padding-top:6px;}
 
+/* 퀴즈 - 드래그 박스 */
+.dragbox_wrap {width:984px; margin:0 auto; margin-top:60px; padding:30px 60px; background:var(--semantic-03);}
+  .dragbox_wrap li {display:flex; align-items:center; gap:10px; padding:20px 0;}
+  .dragbox_wrap li:first-child {padding-top:0;}
+  .dragbox_wrap li:last-child {padding-bottom:0;}
+  .dragbox_wrap li + li {border-top:1px dashed var(--neutral-30);}
+    .drag_box {display:flex; align-items:center; justify-content:center; width:120px; height:40px; background:var(--semantic-04); border:1px solid var(--neutral-60);}
+    .drag_box.is_over {border-color:var(--primary-03); background:var(--semantic-02);}
+    .drag_box.is_filled p {color:var(--primary-03);}
+
+  .dragitems_wrap {display:flex; align-items:center; gap:20px; padding-top:40px;}
+    .main_q .dragitems_wrap .btn_linePrimary2_sm {position:static;}
+  .dragitems_wrap ul {display:flex; align-items:center; justify-content:center; gap:40px; flex:1;}
+    .dragitems_wrap li {display:flex; align-items:center; justify-content:center; width:120px; height:40px; background:var(--semantic-04); border:1px solid var(--neutral-60); cursor:grab; box-shadow:10px 10px 0 0 rgba(206,206,206,0.25); color:var(--primary-03);}
+    .dragitems_wrap li:active {cursor:grabbing;}
+    .dragitems_wrap li.is_dragging {opacity:.4; cursor:grabbing;}
+    .dragitems_wrap li.is_wrong {animation:drag_shake .4s ease;}
+    .dragitems_wrap li.is_used {visibility:hidden; pointer-events:none;}
+
+@keyframes drag_shake {
+  0%, 100% {transform:translateX(0);}
+  20% {transform:translateX(-8px);}
+  40% {transform:translateX(8px);}
+  60% {transform:translateX(-6px);}
+  80% {transform:translateX(6px);}
+}
+
 @media screen and (max-width:1199px) {
   .header_inner {max-width:100%; padding:36px 40px 16px;}
   main {max-width:100%; padding:40px 40px 0;}

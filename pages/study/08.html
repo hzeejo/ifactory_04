@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Module 08</title>
-  <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/global.css">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
   <header>
@@ -107,85 +107,6 @@
     </section>
   </main>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script>
-    $(function () {
-      const products = [
-        { name: '영화 예매', price: 8000 },
-        { name: '영화 예매', price: 8000 },
-        { name: '치킨',     price: 12000 }
-      ];
-
-      const $payBtn       = $('.split_light .btn_bgDark');
-      const $diaryLis     = $('.diary_record ul li');
-      const $diaryUl      = $('.diary_record ul');
-      const $yodongPocket = $('.diary_record > .pocket:first-child');
-      const $remainPocket = $('.diary_record > .pocket:last-child');
-      const $nextBtn      = $('.diray_wrap [class^="btn_line"]');
-
-      let totalMoney = 30000, paidCount = 0, diaryIndex = 0;
-
-      // 초기 상태
-      $diaryLis.add($diaryUl).add($remainPocket).add($nextBtn).addClass('is-hidden');
-      $yodongPocket.find('.body_01, .num_03').text('');
-
-      function typewrite($el, text, speed = 80) {
-        return new Promise(resolve => {
-          $el.text('');
-          let i = 0;
-          const t = setInterval(() => {
-            $el.text($el.text() + text[i++]);
-            if (i >= text.length) { clearInterval(t); resolve(); }
-          }, speed);
-        });
-      }
-
-      // 1. 페이지 진입 → 용돈 받음 → 결제하기 활성화
-      async function startIntro() {
-        await typewrite($yodongPocket.find('.body_01'), '용돈 받음');
-        await typewrite($yodongPocket.find('.num_03'), '30,000');
-        $payBtn.prop('disabled', false);
-      }
-
-      // 2. 결제하기 클릭
-      $payBtn.on('click', async function () {
-        const toProcess = [];
-        $('.option_item').each(function (i) {
-          if ($(this).find('.checkbox_input').prop('checked') && !$(this).data('paid'))
-            toProcess.push({ $item: $(this), i });
-        });
-        if (!toProcess.length) return;
-
-        $payBtn.prop('disabled', true);
-
-        for (const { $item, i } of toProcess) {
-          const $li = $diaryLis.eq(diaryIndex);
-          if (diaryIndex === 0) $diaryUl.removeClass('is-hidden');
-          $li.find('.body_01, .num_03').text('');
-          $li.removeClass('is-hidden');
-          await typewrite($li.find('.body_01'), products[i].name);
-          await typewrite($li.find('.num_03'), `-${products[i].price.toLocaleString()}`);
-          totalMoney -= products[i].price;
-          paidCount++;
-          diaryIndex++;
-          $item.data('paid', true).find('.checkbox_input').prop('checked', false);
-          $item.addClass('is-paid');
-        }
-
-        // 3. 전체 결제 완료 → 남은 돈
-        if (paidCount >= 3) {
-          $remainPocket.find('.body_01, .num_03').text('');
-          $remainPocket.removeClass('is-hidden');
-          await typewrite($remainPocket.find('.body_01'), '남은 돈');
-          await typewrite($remainPocket.find('.num_03'), totalMoney.toLocaleString());
-          // 4. 다음 버튼
-          $nextBtn.removeClass('is-hidden');
-        } else {
-          $payBtn.prop('disabled', false);
-        }
-      });
-
-      startIntro();
-    });
-  </script>
+  <script src="../../js/style.js"></script>
 </body>
 </html>
