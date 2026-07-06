@@ -197,9 +197,10 @@ main.bg_full.ty2 {padding-top:0;}
 
     /* 학습 - 비용 비교 */
     .ticket_lists {display:flex; gap:60px; padding-top:60px;}
-      .ticket_lists li {position:relative; display:flex; align-items:center; justify-content:center; width:400px; height:350px; border-radius:30px;}
+      .ticket_lists li {position:relative; width:400px; height:350px; border-radius:30px;}
       .ticket_lists li:nth-child(1) {background:linear-gradient(#F3F3F3 0%, #DADADA 100%);}
       .ticket_lists li:nth-child(2) {background:#F3F3F3;}
+        .ticket_lists li a {display:flex; align-items:center; justify-content:center; position:absolute; inset:0;}
         .ticket_lists .clip {display:flex; flex-direction:column; gap:10px; align-items:center; justify-content:center; position:absolute; top:0; left:30px; width:60px; height:80px; background:var(--neutral-60); border-radius:0 0 12px 12px; color:#fff; font-size:16px; font-weight:bold; text-align:center; letter-spacing:-4%;}
         .ticket_lists [class^="btn_"] {position:absolute; bottom:-20px; left:50%; transform:translateX(-50%); width:300px;}
 
@@ -215,7 +216,7 @@ main.bg_full.ty2 {padding-top:0;}
       .split_light {display:flex; flex-direction:column; align-items:center;}
         .sl_wrap {width:520px;}
           .sl_wrap [class^="btn_line"] {align-self:flex-start; margin-top:72px; width:fit-content;}
-          .sl_wrap .btn_bgDark {margin:0 auto; margin-top:60px;}
+          .split_light .btn_bgDark {margin:0 auto; margin-top:60px;}
           .option_lists {display:flex; gap:20px; padding-top:20px;}
             .option_item {cursor:pointer;}
               .option_item .img_wrap {display:flex; align-items:center; justify-content:center; width:160px; height:160px; background-color:var(--semantic-02); margin-bottom:10px;}
