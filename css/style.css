@@ -127,6 +127,7 @@ h4, [class*="h_04"] {font-size:16px; font-weight:bold; letter-spacing:-4%; line-
 /* header&footer */
 body {display:flex; flex-direction:column; min-height:100vh; position:relative;}
   .bg_semantic {background:var(--semantic-01); height:100vh; overflow:hidden;}
+  .bg_blue {background:#D5DFF8;}
 header {width:100%;}
 header.light {background:var(--semantic-04);}
   .header_inner {display:flex; align-items:center; justify-content:space-between; padding:36px 0 16px; max-width:1200px; width:100%; margin:0 auto;}
@@ -389,6 +390,17 @@ main.bg_full.ty2 {padding-top:0;}
   60% {transform:translateX(-6px);}
   80% {transform:translateX(6px);}
 }
+
+/* 시뮬레이터 */
+.bg_blue main {max-width:100%; padding-top:0;}
+  .bg_blue section {max-width:1200px; margin:0 auto; padding-top:60px;}
+  .sec_title {height:80px; padding:10px; background:var(--semantic-04);}
+    .sec_title h4 {position:relative;}
+    .sec_title h4:after {position:absolute; top:50%; right:-20px; transform:translateY(-50%); width:1px; height:25px; background:var(--primary-03); content:'';}
+    .st_inner {display:flex; align-items:center; gap:40px; max-width:1200px; height:100%; margin:0 auto; padding:0 38px;}
+  .simulator .txt_wrap {padding-top:58px; gap:30px;}
+    .simulator .txt_wrap .txt_btn {line-height:66px;}
+    .txt_btn .btn_linePrimary2_sm {display:inline-block; vertical-align:middle; margin:-5px 3px 0; padding:8px 20px; line-height:24px;}
 
 @media screen and (max-width:1199px) {
   .header_inner {max-width:100%; padding:36px 40px 16px;}
