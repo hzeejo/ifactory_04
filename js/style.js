@@ -193,11 +193,38 @@ $(function () {
       setTimeout(showComplete, 1000);
     }
 
-    $flipCards.find('.card_front .btn_linePrimary').on('click', function () {
-      $(this).closest('.flip_card').addClass('open');
+    $flipCards.on('click', function () {
+      var $card = $(this);
+      var $wrap = $card.closest('.flip_wrap');
+
+      // flip_wrap.ty3(단면 카드)는 뒷면이 없으므로 플립하지 않음
+      if ($wrap.hasClass('ty3')) return;
+
+      // flip_wrap.ty2(퀴즈 카드)는 클릭할 때마다 앞/뒤로 무한 반복 플립
+      if ($wrap.hasClass('ty2')) {
+        $card.toggleClass('open');
+        return;
+      }
+
+      if ($card.hasClass('open')) return;
+      $card.addClass('open');
       if ($flipCards.length === $flipCards.filter('.open').length) {
         showCompleteAfterFlip();
       }
+    });
+
+    // ox_check 영역은 카드 뒤집기가 아닌 O/X 정답 선택 영역이므로 플립 클릭과 분리
+    $flipCards.find('.ox_check').on('click', function (e) {
+      e.stopPropagation();
+    });
+
+    $flipCards.find('.ox_check button').on('click', function () {
+      $(this).addClass('is_selected').siblings().removeClass('is_selected');
+    });
+
+    // 단면 카드(ty3)의 '이해완료' 버튼: 클릭 시 완료 dim 레이어를 자연스럽게 노출
+    $flipCards.find('.btn_linePrimary3_sm').on('click', function () {
+      $(this).closest('.flip_card').find('.dim_complete').removeClass('is_hidden');
     });
 
     $('.flip_wrap > .btn_linePrimary2_sm').on('click', function () {

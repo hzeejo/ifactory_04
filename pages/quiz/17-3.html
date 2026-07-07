@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 17</title>
+  <title>Module 17-3</title>
   <link rel="stylesheet" href="../../css/reset.css">
   <link rel="stylesheet" href="../../css/global.css">
   <link rel="stylesheet" href="../../css/style.css">
@@ -32,7 +32,7 @@
         </div>
       </div>
       <div class="flip_wrap ty2">
-        <div class="flip_card">
+        <div class="flip_card open"> <!-- 플립되어있는 상태 -->
           <div class="card_inner">
             <div class="card_face card_front">
               <div class="card_title">
@@ -48,17 +48,21 @@
                 <p class="body_01 primary_03">은행 예금 이자율이 연 2%이고 물가상승률이 연 4%라면 실질적으로 자산 가치는 증가한다.</p>
               </div>
               <div class="ox_check">
-                <button type="button" class="check_ox_o">O</button>
+                <button type="button" class="check_ox_o on">O</button>
                 <button type="button" class="check_ox_x">X</button>
               </div>
             </div>
           </div>
+          <!-- 정답인 경우 -->
+          <div class="quiz_pop">
+            <h3 class="primary_02">훌륭합니다. 정답이에요!</h3>
+          </div>
         </div>
-        <div class="flip_card">
+        <div class="flip_card open">
           <div class="card_inner">
             <div class="card_face card_front">
               <div class="card_title">
-                <p class="btn_bgPrimary2_xs">#하기</p>
+                <p type="button" class="btn_bgPrimary2_xs">#하기</p>
                 <h1>금융<b class="primary_02">기능</b></h1>
                 <p class="num_03">Quiz</p>
               </div>
@@ -76,11 +80,11 @@
             </div>
           </div>
         </div>
-        <div class="flip_card">
+        <div class="flip_card open">
           <div class="card_inner">
             <div class="card_face card_front">
               <div class="card_title">
-                <p class="btn_bgPrimary2_xs">#자세</p>
+                <p type="button" class="btn_bgPrimary2_xs">#자세</p>
                 <h1>금융<b class="primary_02">태도</b></h1>
                 <p class="num_03">Quiz</p>
               </div>
@@ -93,9 +97,13 @@
               </div>
               <div class="ox_check">
                 <button type="button" class="check_ox_o">O</button>
-                <button type="button" class="check_ox_x">X</button>
+                <button type="button" class="check_ox_x on">X</button>
               </div>
             </div>
+          </div>
+          <!-- 오답인 경우 -->
+          <div class="quiz_pop">
+            <h3 class="primary_02">아쉽지만 오답입니다.</h3>
           </div>
         </div>
       </div>
