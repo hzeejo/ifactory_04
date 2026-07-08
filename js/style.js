@@ -233,4 +233,32 @@ $(function () {
     });
   })();
 
+  // 시뮬레이터: 물가상승률 가로 슬라이더(0~6) 드래그
+  (function () {
+    var $range = $('.chart_range');
+    if (!$range.length) return;
+
+    function updateFill() {
+      var min = Number($range.attr('min'));
+      var max = Number($range.attr('max'));
+      var pct = ((Number($range.val()) - min) / (max - min)) * 100;
+      $range.css('background', 'linear-gradient(to right, var(--primary-02) 0%, var(--primary-02) ' + pct + '%, var(--white) ' + pct + '%, var(--white) 100%)');
+    }
+
+    $range.on('input', updateFill);
+    updateFill();
+  })();
+
+  // 시뮬레이터: '계산기 사용' 체크 시 sim_left에 dim + 계산기 영역 노출
+  (function () {
+    var $simLeft = $('.sim_left');
+    if (!$simLeft.find('.calc_dim').length) return;
+
+    var $calcCheckbox = $('.info_alert .checkbox_dark');
+    $calcCheckbox.on('change', function () {
+      $simLeft.toggleClass('is_calc', $(this).is(':checked'));
+    });
+    $simLeft.toggleClass('is_calc', $calcCheckbox.is(':checked'));
+  })();
+
 });

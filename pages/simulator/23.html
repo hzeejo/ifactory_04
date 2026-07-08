@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 23</title>
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="tySim bg_yellow"> <!-- 시뮬레이션 레이아웃 tySim, 배경색상 #FEF1B4 경우 -->
+  <header>
+    <div class="header_inner">
+      <img src="../../images/icon/logo_ci.svg" alt="전국투자교육협의회" />
+      <div class="page_type">
+        <p class="guide_01 on">금융투자 실험실</p>
+        <p class="guide_01">심화 활동</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="sec_title">
+      <div class="st_inner">
+        <h4 class="primary_03">가설</h4>
+        <h2><i class="icon_money"></i>물가가 상승하는 상황에서는 1만 원의 실질가치가 시간이 지날수록 하락할 것이다.<span class="h_03">(단, 다른 조건은 동일함)</span></h2>
+      </div>
+    </div>
+    <section class="simulator sim_split"> <!-- 시뮬레이터 화면인 경우 simulator 추가, 좌우 분리 sim_split -->
+      <div class="sim_left">
+        <h2 class="underline">실험 활동가이드</h2>
+        <p class="body_01">물가가 상승할 때 화폐의 실질가치가 어떻게 변동하는지 확인해 보세요.</p>
+        <ul class="sim_step">
+          <li class="on">
+            <span class="num_03 primary_02">STEP 1</span>
+            <p class="body_01">‘물가상승률’이 무엇인지 확인해 보세요.</p>
+          </li>
+          <li class="on">
+            <span class="num_03 primary_02">STEP 2</span>
+            <p class="body_01">최근 10년간의 소비자물가상승률을 확인해 보세요.</p>
+          </li>
+          <li class="on">
+            <span class="num_03 primary_02">STEP 3</span>
+            <p class="body_01">물가상승률에 따른 향후 10년간의 변화를 확인해 보세요.</p>
+          </li>
+          <li>
+            <span class="num_03 primary_02">STEP 4</span>
+            <p class="body_01">물가상승률을 고려해 10년 후 치킨을 사는데 필요한 금액을 계산해 보세요.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="sim_right ty3"> <!-- step3 -->
+        <div class="sb_head"> <!-- 왼쪽정렬 -->
+          <span class="num_02 primary_02">STEP 3</span>
+          <h3>물가상승률에 따른 향후 10년간의 변화를 확인해 보세요.</h3>
+        </div>
+        <div class="progress_box">
+          <p class="body_01 line">물가상승률(%)</p>
+          <div class="progress_chart">
+            <input type="range" class="chart_range" min="0" max="6" step="2" value="2">
+            <ul class="chart_ticks">
+              <li class="num_03">0</li>
+              <li class="num_03">1</li>
+              <li class="num_03">2</li>
+              <li class="num_03">3</li>
+              <li class="num_03">4</li>
+              <li class="num_03">5</li>
+              <li class="num_03">6</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result_graph">
+          <div class="graph_tit">
+            <p class="body_01">향후 10년 치킨 가격</p>
+            <p class="guide_01">물가상승률 연 <b class="body_01 primary_02">2%</b></p>
+          </div>
+          <div class="graph_wrap">
+            //그래프 영역
+          </div>
+        </div>
+        <div class="info_alert">
+          <i class="icon_alert"></i>
+          <p class="body_01">상기 그래프에서 물가상승률을 조정해보고, 물가상승률에 따른 10년 후 치킨 가격을 작성해 보세요.</p>
+        </div>
+        <ul class="step_box_lists">
+          <li class="step_box"> <!-- flex정렬 -->
+            <p class="body_01">2%</p>
+            <div class="input_wrap">
+              <input type="text" class="num_03" placeholder="2.16%">
+            </div>
+            <p class="body_01">원</p>
+          </li>
+          <li class="step_box"> <!-- flex정렬 -->
+            <p class="body_01">4%</p>
+            <div class="input_wrap">
+              <input type="text" class="num_03" placeholder="2.16%">
+            </div>
+            <p class="body_01">원</p>
+          </li>
+          <li class="step_box"> <!-- flex정렬 -->
+            <p class="body_01">6%</p>
+            <div class="input_wrap">
+              <input type="text" class="num_03" placeholder="2.16%">
+            </div>
+            <p class="body_01">원</p>
+          </li>
+        </ul>
+        <button type="button" class="btn_linePrimary2_sm">확인완료</button>
+      </div>
+    </section>
+  </main>
+  <div class="desk_wrap">
+    <img class="bg_testkit" src="../../images/sample/img_testkit.png" alt="실험실책상">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../../js/style.js"></script>
+</body>
+</html>

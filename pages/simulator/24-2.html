@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 24-2</title>
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="tySim bg_yellow"> <!-- 시뮬레이션 레이아웃 tySim, 배경색상 #FEF1B4 경우 -->
+  <header>
+    <div class="header_inner">
+      <img src="../../images/icon/logo_ci.svg" alt="전국투자교육협의회" />
+      <div class="page_type">
+        <p class="guide_01 on">금융투자 실험실</p>
+        <p class="guide_01">심화 활동</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="sec_title">
+      <div class="st_inner">
+        <h4 class="primary_03">가설</h4>
+        <h2><i class="icon_money"></i>물가가 상승하는 상황에서는 1만 원의 실질가치가 시간이 지날수록 하락할 것이다.<span class="h_03">(단, 다른 조건은 동일함)</span></h2>
+      </div>
+    </div>
+    <section class="simulator sim_split"> <!-- 시뮬레이터 화면인 경우 simulator 추가, 좌우 분리 sim_split -->
+      <div class="sim_left">
+        <h2 class="underline">실험 활동가이드</h2>
+        <p class="body_01">물가가 상승할 때 화폐의 실질가치가 어떻게 변동하는지 확인해 보세요.</p>
+        <ul class="sim_step">
+          <li class="on">
+            <span class="num_03 primary_02">STEP 1</span>
+            <p class="body_01">‘물가상승률’이 무엇인지 확인해 보세요.</p>
+          </li>
+          <li class="on">
+            <span class="num_03 primary_02">STEP 2</span>
+            <p class="body_01">최근 10년간의 소비자물가상승률을 확인해 보세요.</p>
+          </li>
+          <li class="on">
+            <span class="num_03 primary_02">STEP 3</span>
+            <p class="body_01">물가상승률에 따른 향후 10년간의 변화를 확인해 보세요.</p>
+          </li>
+          <li class="on">
+            <span class="num_03 primary_02">STEP 4</span>
+            <p class="body_01">물가상승률을 고려해 10년 후 치킨을 사는데 필요한 금액을 계산해 보세요.</p>
+          </li>
+        </ul>
+        <div class="calc_dim"></div>
+      </div>
+      <div class="sim_right ty4"> <!-- step4 -->
+        <div class="sb_head"> <!-- 왼쪽정렬 -->
+          <span class="num_02 primary_02">STEP 4</span>
+          <h3>물가상승률을 고려하여 10년 후 치킨을 구매하는 데 필요한 금액을 계산<br/>해 보세요.</h3>
+        </div>
+        <div class="progress_box ty2">
+          <p class="body_01 blue">공식</p>
+          <p class="body_01 light">미래가격 <span>=</span> 현재가격×(1+물가상승률)*기간</p>
+        </div>
+        <div class="info_alert">
+          <i class="icon_alert"></i>
+          <p class="body_01">상기 공식을 대입하여 아래 문제의 답을 구해 보세요.</p>
+          <label class="checkbox_item">
+            <input type="checkbox" class="checkbox_input checkbox_dark" checked>
+            <span class="body_02">계산기 사용</span>
+          </label>
+        </div>
+        <ul class="mission_lists">
+          <li>
+            <p class="body_01">1. 물가상승률이 연 3%로 일정할 때, 5년 후 햄버거 가격을 구하시오.<br/>현재 햄버거 가격은 7,000원 입니다. (원 단위 반올림)</p>
+            <div class="mission">
+              <p class="body_01">7,000원 X (1+0.03)5 = 8,114.9185201<br/>(원 단위 반올림 시, 8,115원)</p>
+              <div class="step_box"> <!-- flex정렬 -->
+                <p class="body_01">약</p>
+                <div class="input_wrap">
+                  <input type="text" class="num_03" placeholder="0" value="8,115">
+                </div>
+                <p class="body_01">원</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class="body_01">2. 물가상승률이 연 4%로 일정할 때, 10년 후 치킨 가격을 구하시오.<br/>현재 치킨 가격은 10,000원 입니다. (원 단위 반올림)</p>
+            <div class="mission">
+              <p class="body_01">10,000원 X (1+0.04)10 = 14,802.4428491834<br/>(원 단위 반올림 시, 8,115원)</p>
+              <div class="step_box"> <!-- flex정렬 -->
+                <p class="body_01">약</p>
+                <div class="input_wrap">
+                  <input type="text" class="num_03" placeholder="0" value="14,082">
+                </div>
+                <p class="body_01">원</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <button type="button" class="btn_linePrimary2_sm">확인완료</button>
+      </div>
+    </section>
+  </main>
+  <div class="calc_box_layer">
+    <div class="calc_box"><!-- 계산기 영역: 개발 영역, 400*600 --></div>
+  </div>
+  <div class="desk_wrap">
+    <img class="bg_testkit" src="../../images/sample/img_testkit.png" alt="실험실책상">
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../../js/style.js"></script>
+</body>
+</html>

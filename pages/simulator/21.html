@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 21</title>
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/global.css">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body class="tySim bg_yellow"> <!-- 시뮬레이션 레이아웃 tySim, 배경색상 #FEF1B4 경우 -->
+  <header>
+    <div class="header_inner">
+      <img src="../../images/icon/logo_ci.svg" alt="전국투자교육협의회" />
+      <div class="page_type">
+        <p class="guide_01 on">금융투자 실험실</p>
+        <p class="guide_01">심화 활동</p>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="sec_title">
+      <div class="st_inner">
+        <h4 class="primary_03">가설</h4>
+        <h2><i class="icon_money"></i>물가가 상승하는 상황에서는 1만 원의 실질가치가 시간이 지날수록 하락할 것이다.<span class="h_03">(단, 다른 조건은 동일함)</span></h2>
+      </div>
+    </div>
+    <section class="simulator sim_split"> <!-- 시뮬레이터 화면인 경우 simulator 추가, 좌우 분리 sim_split -->
+      <div class="sim_left">
+        <h2 class="underline">실험 활동가이드</h2>
+        <p class="body_01">물가가 상승할 때 화폐의 실질가치가 어떻게 변동하는지 확인해 보세요.</p>
+        <ul class="sim_step">
+          <li class="on">
+            <span class="num_03 primary_02">STEP 1</span>
+            <p class="body_01">‘물가상승률’이 무엇인지 확인해 보세요.</p>
+          </li>
+          <li>
+            <span class="num_03 primary_02">STEP 2</span>
+            <p class="body_01">최근 10년간의 소비자물가상승률을 확인해 보세요.</p>
+          </li>
+          <li>
+            <span class="num_03 primary_02">STEP 3</span>
+            <p class="body_01">물가상승률에 따른 향후 10년간의 변화를 확인해 보세요.</p>
+          </li>
+          <li>
+            <span class="num_03 primary_02">STEP 4</span>
+            <p class="body_01">물가상승률을 고려해 10년 후 치킨을 사는데 필요한 금액을 계산해 보세요.</p>
+          </li>
+        </ul>
+      </div>
+      <div class="sim_right">
+        <div class="step_box">
+          <div class="sb_head">
+            <span class="num_02 primary_02">STEP 1</span>
+            <h3>‘물가상승률’이 무엇인지 확인해 보세요.</h3>
+          </div>
+          <div class="input_wrap">
+            <i class="icon_input_search"></i>
+            <input type="text" placeholder="검색어를 입력하세요">
+            <button type="button" class="btn_bgDark_xs num_03">Search</button>
+          </div>
+        </div>
+        <div class="search_result">
+          <div class="result_tit">
+            <i class="icon_bulb"></i>
+            <p class="guide_01">검색결과</p>
+          </div>
+          <div class="result_data">
+            <p class="body_02">1. 물가상승률<br/>
+              물가상승률은 재화(물건)와 서비스의 전반적인 가격 수준이 일정 기간 동안 얼마나 변했는지를 나타내는 비율입니다.<br/><br/>
+              2. 조사 기관<br/>
+              우리나라에서는 통계청이 식료품, 의류, 주거, 교통, 교육, 통신 등 가게가 자주 소비하는 상품과 서비스의 가격을 조사하여 소비자물가지수를 작성하고, 이를 바탕으로 물가상승률을 산출합니다. 물가상승률은 매월 발표되며 물가가 오르거나 내리는 정도를 파악하는데 활용됩니다.</p>
+          </div>
+          <button type="button" class="btn_linePrimary2_sm">확인완료</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="desk_wrap">
+    <img class="bg_testkit" src="../../images/sample/img_testkit.png" alt="실험실책상">
+  </div>
+</body>
+</html>
