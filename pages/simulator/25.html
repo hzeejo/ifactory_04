@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Module 19</title>
+  <title>Module 25</title>
   <link rel="stylesheet" href="../../css/reset.css">
   <link rel="stylesheet" href="../../css/global.css">
   <link rel="stylesheet" href="../../css/style.css">
 </head>
-<body class="tySim bg_blue"> <!-- 시뮬레이션 레이아웃 tySim, 배경색상 #D5DFF8인 경우 -->
+<body class="tySim"> <!-- 시뮬레이션 레이아웃 tySim, 배경색상 #D5DFF8인 경우 -->
   <header>
     <div class="header_inner">
       <img src="../../images/icon/logo_ci.svg" alt="전국투자교육협의회" />
@@ -19,25 +19,27 @@
     </div>
   </header>
   <main>
-    <div class="sec_title">
+    <div class="sec_title bg_blue">
       <div class="st_inner">
         <h4 class="primary_03">가설</h4>
         <h2><i class="icon_money"></i>물가가 상승하는 상황에서는 1만 원의 실질가치가 시간이 지날수록 하락할 것이다.<span class="h_03">(단, 다른 조건은 동일함)</span></h2>
       </div>
     </div>
-    <section class="main_ant simulator"> <!-- 시뮬레이터 화면인 경우 simulator 추가 -->
-      <img src="../../images/sample/ant_tutor_gpt.png" alt="개미튜터">
-      <div class="txt_wrap">
-        <h3>가설을 어떻게 검증해야 할지 고민되시나요?  걱정하지 마세요.<br/>활동 가이드를 따라 차근차근 진행하면 어렵지 않습니다.</h3>
-        <h1 class="txt_btn">자,<p class="btn_linePrimary2_sm">다음</p>을 클릭하여 가설을 검증하기 위한<br/> <b class="primary_02">실험 활동 가이드</b>를 확인해 보세요.</h1>
+    <section class="main_data">
+      <div class="data_title">
+        <i class="icon_simulator"></i>
+        <p class="body_01">아래 시뮬레이터에 값을 입력하고, 돈의 실질가치가 어떻게 변하는지 확인해 보세요.</p>
+      </div>
+      <div class="data_wrap">
+        <h1 class="neutral_30">시뮬레이터 불러오는 영역</h1>
       </div>
     </section>
   </main>
   <div class="desk_wrap">
     <div class="inner">
-      <button type="button" class="btn_linePrimary2_sm">다음</button>
+      <button type="button" class="btn_linePrimary2_sm">확인완료</button>
     </div>
-    <img class="bg_desk" src="../../images/sample/bg_simulator.png" alt="책상이미지">
+    <img class="bg_desk" src="../../images/sample/bg_simulator_bottom.png" alt="책상이미지">
   </div>
 </body>
 </html>
