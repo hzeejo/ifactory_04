@@ -85,6 +85,80 @@ $(function () {
     });
   })();
 
+  // 심화활동 3: 3열(a-d / 1-4 / 가-라) 점(dot) 연결 매칭
+  (function () {
+    var $matchWrap = $('.match_wrap');
+    if (!$matchWrap.length) return;
+
+    var svgNS = 'http://www.w3.org/2000/svg';
+    var svg = $matchWrap.find('.match_lines')[0];
+    var $fromDot = null;
+    var $tempLine = null;
+
+    function wrapRect() {
+      return $matchWrap[0].getBoundingClientRect();
+    }
+
+    function dotCenter($dot) {
+      var r = $dot[0].getBoundingClientRect();
+      var wrap = wrapRect();
+      return { x: r.left + r.width / 2 - wrap.left, y: r.top + r.height / 2 - wrap.top };
+    }
+
+    function makeLine(cls) {
+      var line = document.createElementNS(svgNS, 'line');
+      line.setAttribute('class', cls);
+      svg.appendChild(line);
+      return $(line);
+    }
+
+    function setLine($line, x1, y1, x2, y2) {
+      $line.attr({ x1: x1, y1: y1, x2: x2, y2: y2 });
+    }
+
+    $matchWrap.on('mousedown', '.dot', function (e) {
+      var $dot = $(this);
+      if ($dot.hasClass('is_connected')) return;
+      e.preventDefault();
+      $fromDot = $dot;
+      var c = dotCenter($fromDot);
+      $tempLine = makeLine('temp_line');
+      setLine($tempLine, c.x, c.y, c.x, c.y);
+      $(document).on('mousemove.matchdrag', onMove);
+      $(document).on('mouseup.matchdrag', onUp);
+    });
+
+    function onMove(e) {
+      if (!$tempLine) return;
+      var wrap = wrapRect();
+      setLine($tempLine, dotCenter($fromDot).x, dotCenter($fromDot).y, e.clientX - wrap.left, e.clientY - wrap.top);
+    }
+
+    function onUp(e) {
+      $(document).off('.matchdrag');
+      if ($tempLine) { $tempLine.remove(); $tempLine = null; }
+      if (!$fromDot) return;
+
+      var $target = $(document.elementFromPoint(e.clientX, e.clientY)).closest('.dot');
+      var matched = false;
+
+      if ($target.length && !$target.is($fromDot) && !$target.hasClass('is_connected') &&
+          String($target.data('match')) === String($fromDot.data('match'))) {
+        var c1 = dotCenter($fromDot), c2 = dotCenter($target);
+        var $line = makeLine('match_line');
+        setLine($line, c1.x, c1.y, c2.x, c2.y);
+        $fromDot.add($target).addClass('is_connected');
+        matched = true;
+      }
+
+      if (!matched && $target.length) {
+        var $li = $target.closest('li').addClass('is_wrong');
+        setTimeout(function () { $li.removeClass('is_wrong'); }, 400);
+      }
+      $fromDot = null;
+    }
+  })();
+
   // 스터디 08/09: 장바구니 다이어리 결제 애니메이션
   (function () {
     var $diaryRecord = $('.diary_record');
