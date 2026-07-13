@@ -159,6 +159,61 @@ $(function () {
     }
   })();
 
+  // 심화활동 3-2: 카드형 드래그 앤 드롭 매칭 (금융상품/상품예시)
+  (function () {
+    var $matchWrapCard = $('.match_wrap_card');
+    if (!$matchWrapCard.length) return;
+
+    var $dragBox = $matchWrapCard.find('.drag_box');
+    var $dragging = null;
+
+    $matchWrapCard.on('dragstart', '.lists > div [draggable]', function (e) {
+      $dragging = $(this).addClass('is_dragging');
+      e.originalEvent.dataTransfer.effectAllowed = 'move';
+      e.originalEvent.dataTransfer.setData('text/plain', $dragging.text().trim());
+    });
+
+    $matchWrapCard.on('dragend', '.lists > div [draggable]', function () {
+      $(this).removeClass('is_dragging');
+    });
+
+    $dragBox.on('dragover', function (e) {
+      if ($(this).hasClass('is_filled')) return;
+      e.preventDefault();
+      $(this).addClass('is_over');
+    });
+
+    $dragBox.on('dragleave', function () {
+      $(this).removeClass('is_over');
+    });
+
+    $dragBox.on('drop', function (e) {
+      e.preventDefault();
+      var $box = $(this).removeClass('is_over');
+      if ($box.hasClass('is_filled') || !$dragging) return;
+
+      var answer = String($box.data('answer'));
+      var dragged = $dragging.text().trim();
+
+      if (answer === dragged) {
+        var btnClass = $dragging.hasClass('btn_linePrimary3_sm') ? 'btn_linePrimary3_sm' : 'btn_linePrimary2_sm';
+        $box.empty().append($('<p/>', { class: btnClass, text: dragged })).addClass('is_filled');
+        $dragging.removeClass('is_dragging').addClass('is_used');
+
+        var $card = $box.closest('li');
+        if ($card.find('.drag_box').length === $card.find('.drag_box.is_filled').length) {
+          $card.addClass('is_done');
+        }
+      } else {
+        var $wrong = $dragging.addClass('is_wrong');
+        setTimeout(function () {
+          $wrong.removeClass('is_wrong is_dragging');
+        }, 400);
+      }
+      $dragging = null;
+    });
+  })();
+
   // 스터디 08/09: 장바구니 다이어리 결제 애니메이션
   (function () {
     var $diaryRecord = $('.diary_record');
