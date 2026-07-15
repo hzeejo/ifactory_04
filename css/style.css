@@ -57,6 +57,7 @@ h4, [class*="h_04"] {font-size:16px; font-weight:bold; letter-spacing:-4%; line-
 
 /* button */
 [class^="btn_"] {display:flex; align-items:center; justify-content:center; gap:10px; padding:20px 50px; border-radius:80px; font-size:20px; font-weight:bold; letter-spacing:-.4px; background:var(--white);}
+[class^="btn_"]:disabled {background-color:unset !important; color:var(--neutral-30) !important; border-color:var(--neutral-30) !important; cursor:not-allowed;}
 [class^="btn_"][class*="sm"] {gap:10px; height:40px; padding:10px 20px; border-radius:30px; font-size:16px; line-height:40px;}
 [class^="btn_"][class*="xs"] {gap:10px; height:26px; padding:3px 10px; border-radius:12px; font-size:13px; letter-spacing:-.2px; line-height:150%;}
 [class*="bgPrimary"] {background:var(--primary-03); color:var(--white);}
@@ -73,6 +74,7 @@ h4, [class*="h_04"] {font-size:16px; font-weight:bold; letter-spacing:-4%; line-
 [class*="lineDark"] {border:2px solid var(--primary-01); color:var(--primary-01);}
 [class*="lineDark"]:hover {background:var(--primary-01); color:var(--white);}
 [class*="lineNeutral"] {border:2px solid var(--neutral-30); color:var(--neutral-30);}
+[class*="lineNeutral"]:hover {background:var(--primary-02); color:var(--white); border-color:var(--primary-02);}
 
 [class^="btnGroup_"] {display:flex; align-items:center; margin-top:16px;}
 .btnGroup_center {justify-content:center; gap:60px;}
@@ -133,9 +135,10 @@ h4, [class*="h_04"] {font-size:16px; font-weight:bold; letter-spacing:-4%; line-
 /* checkbox */
 .checkbox_item {display:flex; align-items:center; gap:5px; cursor:pointer;}
 .checkbox_input {appearance:none; -webkit-appearance:none; width:24px; height:24px; flex-shrink:0; background:url(../images/button/checkbox_off.svg) no-repeat center / 100% auto; cursor:pointer; margin:0;}
-.checkbox_input:checked {background-image:url(../images/button/checkbox_on.svg);}
+.checkbox_input:hover, .checkbox_input:checked {background-image:url(../images/button/checkbox_on.svg);}
 .checkbox_blue {background-image:url(../images/button/checkbox_blue.svg);}
 .checkbox_red:checked {background-image:url(../images/button/checkbox_red.svg);}
+.checkbox_red:hover {background-image:url(../images/button/checkbox_on.svg);}
 .checkbox_red:checked + span {color:var(--primary-02);}
 .checkbox_dark {background-image:url(../images/button/checkbox_dark.svg);}
 .checkbox_item.is_wrong {position:relative;}
@@ -354,7 +357,6 @@ main.bg_full.ty2 {padding-top:0;}
 
 .is_hidden {display:none !important;}
 .is-paid {opacity:0.4; pointer-events:none;}
-[class^="btn_"]:disabled {opacity:0.4; cursor:not-allowed;}
 .no-border {border-bottom:none !important;}
 .no-border::after {display:none !important;}
 
