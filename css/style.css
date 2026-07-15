@@ -339,9 +339,9 @@ main.bg_full.ty2 {padding-top:0;}
         .check_tit .btn_bgPrimary2_xs {border-radius:4px;}
       .quiz_check .check_list {display:flex; align-items:center; justify-content:space-between; gap:40px; width:100%; padding-top:10px;}
   /* 퀴즈 하단 이전/다음(또는 단일) 버튼 영역: 기본 우측 정렬, .ty2는 좌우 분리, .ty3는 중앙 정렬 */
-  .quiz_nav {display:flex; justify-content:flex-end; gap:20px; margin-top:44px;}
-  .quiz_nav.ty2 {justify-content:space-between;}
-  .quiz_nav.ty3 {justify-content:center;}
+  .quiz_nav {position:relative; z-index:6; display:flex; justify-content:flex-end; gap:20px; margin-top:-14px;}
+  .quiz_nav.ty2 {justify-content:space-between; margin-top:44px;}
+  .quiz_nav.ty3 {justify-content:center; margin-top:44px;}
   .main_q.is_blur::before {content:''; position:absolute; inset:-20px; z-index:5; background:rgba(255,255,255,.8);}
   .quiz_pop {display:flex; flex-direction:column; align-items:center; justify-content:center; gap:30px; width:300px; height:300px; position:absolute; top:100px; left:50%; transform:translateX(-50%); z-index:10; background:var(--semantic-04); border:2px solid var(--primary-02); box-shadow:0 0 10px 0 rgba(255,101,67,0.35);}
 
@@ -475,6 +475,7 @@ main.bg_full.ty2 {padding-top:0;}
       .sb_head {display:flex; align-items:center; justify-content:center; gap:40px;}
       .step_box .input_wrap {display:flex; align-items:center; gap:10px; height:54px; padding:0 20px; background:var(--white);}
         .step_box .input_wrap input {flex:1; min-width:0; height:100%; border:none; outline:none; background:transparent; font-size:14px; color:var(--primary-01); text-align:right;}
+        .step_box .input_wrap .icon_input_search + input {text-align:left;}
         .step_box .input_wrap input::placeholder {color:var(--neutral-30);}
         .input_wrap .btn_bgDark_xs {width:56px; height:31px; border-radius:0;}
     .step_box_lists {display:flex; gap:10px;}
